@@ -17,7 +17,7 @@ const projects: Project[] = [
     title: "Shop.co E-commerce",
     description: "Plataforma e-commerce completa com navegação de produtos, filtros e checkout fluido.",
     tags: ["React", "TypeScript", "Tailwind CSS", "API"],
-    image: "https://oluisviportfolio.vercel.app/assets/shopco.jpeg",
+    image: "/assets/shopco.jpeg",
     link: "https://shop-co-ecommerce-three.vercel.app/",
   },
   {
@@ -25,7 +25,7 @@ const projects: Project[] = [
     title: "UrbanFarme",
     description: "Sistema de gestão agrícola cross-platform com dados em tempo real e integração completa de banco de dados.",
     tags: ["React", "Node.js", "PostgreSQL", "REST API"],
-    image: "https://oluisviportfolio.vercel.app/assets/urbanfarme.jpeg",
+    image: "/assets/urbanfarme.jpeg",
     link: "https://fazenda-urbana.onrender.com/",
   },
   {
@@ -33,7 +33,7 @@ const projects: Project[] = [
     title: "Foods Platform",
     description: "Plataforma de receitas curada com UI intuitiva para descobrir e organizar refeições.",
     tags: ["React", "JavaScript", "CSS", "API"],
-    image: "https://oluisviportfolio.vercel.app/assets/foods.jpeg",
+    image: "/assets/foods.jpeg",
     link: "https://foodsprojectdemo.netlify.app/",
   },
   {
@@ -41,7 +41,7 @@ const projects: Project[] = [
     title: "Image Gallery",
     description: "Galeria dinâmica com API externa, layouts responsivos e scroll infinito.",
     tags: ["React", "API Integration", "Responsive"],
-    image: "https://oluisviportfolio.vercel.app/assets/gallery.jpeg",
+    image: "/assets/gallery.jpeg",
     link: "https://gallery-sigma-one-89.vercel.app/",
   },
   {
@@ -49,7 +49,7 @@ const projects: Project[] = [
     title: "Terras Mil Dashboard",
     description: "Dashboard de operações para agricultura urbana com insights em tempo real.",
     tags: ["React", "Dashboard", "Data Viz"],
-    image: "https://oluisviportfolio.vercel.app/assets/terras%20mil.jpeg",
+    image: "/assets/terras-mil.jpeg",
     link: "https://terras-mil.netlify.app/",
   },
   {
@@ -57,7 +57,7 @@ const projects: Project[] = [
     title: "Smart Form Builder",
     description: "Interface de formulário acessível com validação em tempo real e suporte cross-device.",
     tags: ["React", "Form Validation", "UX"],
-    image: "https://oluisviportfolio.vercel.app/assets/form.jpeg",
+    image: "/assets/form.jpeg",
     link: "https://form-eight-sepia.vercel.app/",
   },
 ];
