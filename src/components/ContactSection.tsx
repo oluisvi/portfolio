@@ -53,7 +53,7 @@ const ContactSection = () => {
             <span className="block h-px w-0 group-hover:w-full bg-accent transition-all duration-500" />
           </a>
           <a
-            href="mailto:contact@luishenrique.dev"
+            href="mailto:oluisvipersonal@gamil.com"
             className="font-heading text-lg md:text-2xl text-foreground hover:text-accent transition-colors duration-300 group"
           >
             Email
