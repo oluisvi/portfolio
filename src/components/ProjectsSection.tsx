@@ -54,11 +54,11 @@ const projects: Project[] = [
   },
   {
     number: "06",
-    title: "Smart Form Builder",
-    description: "Interface de formulário acessível com validação em tempo real e suporte cross-device.",
-    tags: ["React", "Form Validation", "UX"],
-    image: "/assets/form.jpeg",
-    link: "https://form-eight-sepia.vercel.app/",
+    title: "EcoEduca Platform",
+    description: "Plataforma de educação ambiental desenvolvida para concientização de assuntos ecológicos.",
+    tags: ["Artificial Inteligence", "Platform", "UX"],
+    image: "/assets/ecoeduca.jpeg",
+    link: "https://ecoeduca.onrender.com/",
   },
 ];
 
