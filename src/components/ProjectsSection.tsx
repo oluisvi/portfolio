@@ -14,6 +14,14 @@ interface Project {
 const projects: Project[] = [
   {
     number: "01",
+    title: "EcoEduca Platform",
+    description: "Plataforma de educação ambiental desenvolvida para concientização de assuntos ecológicos.",
+    tags: ["Artificial Inteligence", "Platform", "UX"],
+    image: "/assets/ecoeduca.jpeg",
+    link: "https://ecoeduca.onrender.com/",
+  },
+  {
+    number: "02",
     title: "Shop.co E-commerce",
     description: "Plataforma e-commerce completa com navegação de produtos, filtros e checkout fluido.",
     tags: ["React", "TypeScript", "Tailwind CSS", "API"],
@@ -21,20 +29,12 @@ const projects: Project[] = [
     link: "https://shop-co-ecommerce-three.vercel.app/",
   },
   {
-    number: "02",
+    number: "03",
     title: "UrbanFarme",
     description: "Sistema de gestão agrícola cross-platform com dados em tempo real e integração completa de banco de dados.",
     tags: ["React", "Node.js", "PostgreSQL", "REST API"],
     image: "/assets/urbanfarme.jpeg",
     link: "https://fazenda-urbana.onrender.com/",
-  },
-  {
-    number: "03",
-    title: "Foods Platform",
-    description: "Plataforma de receitas curada com UI intuitiva para descobrir e organizar refeições.",
-    tags: ["React", "JavaScript", "CSS", "API"],
-    image: "/assets/foods.jpeg",
-    link: "https://foodsprojectdemo.netlify.app/",
   },
   {
     number: "04",
@@ -49,16 +49,16 @@ const projects: Project[] = [
     title: "Terras Mil Dashboard",
     description: "Dashboard de operações para agricultura urbana com insights em tempo real.",
     tags: ["React", "Dashboard", "Data Viz"],
-    image: "/assets/terras-mil.jpeg",
+    image: "/assets/terrasmil.jpeg",
     link: "https://terras-mil.netlify.app/",
   },
   {
     number: "06",
-    title: "EcoEduca Platform",
-    description: "Plataforma de educação ambiental desenvolvida para concientização de assuntos ecológicos.",
-    tags: ["Artificial Inteligence", "Platform", "UX"],
-    image: "/assets/ecoeduca.jpeg",
-    link: "https://ecoeduca.onrender.com/",
+    title: "Foods Platform",
+    description: "Plataforma de receitas curada com UI intuitiva para descobrir e organizar refeições.",
+    tags: ["React", "JavaScript", "CSS", "API"],
+    image: "/assets/foods.jpeg",
+    link: "https://foodsprojectdemo.netlify.app/",
   },
 ];
 
