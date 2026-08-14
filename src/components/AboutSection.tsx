@@ -8,8 +8,9 @@ const techStack = {
 };
 
 const experience = [
-  { role: "English & Programming Teacher", company: "DiscoverON", period: "Set 2025 – Presente" },
+  { role: "IT Support", company: "Kaffa", period: "Jul 2026 – Presente" },
   { role: "Volunteer Web Developer", company: "Frontend Fusion", period: "Jun 2025 – Presente" },
+  { role: "English & Programming Teacher", company: "DiscoverON", period: "Set 2025 – Jun 2026" },
   { role: "Fullstack Developer", company: "Freelancer", period: "Abr 2024 – Presente" },
   { role: "Fullstack Developer Intern", company: "Compass UOL", period: "Out 2024 – Abr 2025" },
 ];
