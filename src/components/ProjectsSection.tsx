@@ -85,7 +85,7 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
           <motion.img
             src={project.image}
             alt={project.title}
-            className="w-full h-[50vh] md:h-[75vh] object-cover transition-transform duration-700 group-hover:scale-105"
+            className="block w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
         </div>
