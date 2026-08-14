@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
@@ -10,9 +10,17 @@ const Header = () => {
     { label: "Contato", href: "#contact" },
   ];
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 mix-blend-difference">
-      <div className="flex items-center justify-between px-6 md:px-12 py-6">
+    <header className="fixed top-0 left-0 w-full z-50 md:mix-blend-difference">
+      <div className="relative z-50 flex items-center justify-between px-6 md:px-12 py-6">
         <a href="#" className="font-heading text-foreground text-lg font-medium tracking-tight">
           LH<span className="text-accent">.</span>
         </a>
@@ -22,7 +30,7 @@ const Header = () => {
             <a
               key={link.label}
               href={link.href}
-              className="text-foreground text-sm font-body tracking-wide uppercase hover:text-accent transition-colors duration-300"
+              className="text-foreground text-sm font-body tracking-wide uppercase hover:text-accent focus-visible:text-accent focus-visible:outline-none transition-colors duration-300"
             >
               {link.label}
             </a>
@@ -30,8 +38,12 @@ const Header = () => {
         </nav>
 
         <button
+          type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-foreground font-heading text-sm uppercase"
+          aria-controls="mobile-navigation"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          className="md:hidden text-foreground font-heading text-sm uppercase focus-visible:text-accent focus-visible:outline-none"
         >
           {menuOpen ? "Fechar" : "Menu"}
         </button>
@@ -40,6 +52,9 @@ const Header = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            id="mobile-navigation"
+            role="navigation"
+            aria-label="Navegação mobile"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -53,7 +68,7 @@ const Header = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => setMenuOpen(false)}
-                className="font-heading text-5xl font-bold text-foreground hover:text-accent transition-colors"
+                className="font-heading text-5xl font-bold text-foreground hover:text-accent focus-visible:text-accent focus-visible:outline-none transition-colors"
               >
                 {link.label}
               </motion.a>

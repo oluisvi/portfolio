@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-12 relative overflow-hidden">
+    <section className="min-h-[100svh] md:min-h-screen flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-12 relative overflow-hidden">
       {/* Background accent line */}
       <div className="absolute top-0 right-[20%] w-px h-full bg-border opacity-30" />
       <div className="absolute top-0 right-[60%] w-px h-full bg-border opacity-15" />

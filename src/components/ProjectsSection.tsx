@@ -24,8 +24,8 @@ const projects: Project[] = [
   {
 number: "02",
     title: "EcoEduca Platform",
-    description: "Plataforma de educação ambiental desenvolvida para concientização de assuntos ecológicos.",
-    tags: ["Artificial Inteligence", "Platform", "UX"],
+    description: "Plataforma de educação ambiental desenvolvida para conscientização de assuntos ecológicos.",
+    tags: ["Artificial Intelligence", "Platform", "UX"],
     image: "/assets/ecoeduca.jpeg",
     link: "https://ecoeduca.onrender.com/",
   },
@@ -85,7 +85,9 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
           <motion.img
             src={project.image}
             alt={project.title}
-            className="block w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+            loading="eager"
+            decoding="async"
+            className="block w-full h-auto object-contain object-center transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
         </div>
@@ -130,7 +132,9 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
         <motion.img
           src={project.image}
           alt={project.title}
-          className="block w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.03]"
+          loading="lazy"
+          decoding="async"
+          className="block w-full h-auto object-contain object-center transition-transform duration-700 group-hover:scale-[1.03]"
         />
         <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-500" />
 
@@ -144,7 +148,7 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
         <h3 className="font-heading text-2xl md:text-4xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
           {project.title}
         </h3>
-        <p className="text-muted-foreground font-body text-sm md:text-base max-w-md leading-relaxed mt-3 ${isEven ? '' : 'md:ml-auto'}">
+        <p className={`text-muted-foreground font-body text-sm md:text-base max-w-md leading-relaxed mt-3 ${isEven ? "" : "md:ml-auto"}`}>
           {project.description}
         </p>
         <div className={`flex flex-wrap gap-3 mt-4 ${isEven ? "" : "md:justify-end"}`}>
