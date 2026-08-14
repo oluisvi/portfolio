@@ -23,13 +23,21 @@ const projects: Project[] = [
   {
     number: "02",
     title: "Shop.co E-commerce",
+    description: "Plataforma de gestão financeira, com integração à OpenFinance e IA.",
+    tags: ["Next", "Nest", "Finance", "Fullstack"],
+    image: "/assets/atlas.png",
+    link: "https://atlas-finance-web.onrender.app/",
+  },
+  {
+    number: "03",
+    title: "Shop.co E-commerce",
     description: "Plataforma e-commerce completa com navegação de produtos, filtros e checkout fluido.",
     tags: ["React", "TypeScript", "Tailwind CSS", "API"],
     image: "/assets/shopco.jpeg",
     link: "https://shop-co-ecommerce-three.vercel.app/",
   },
   {
-    number: "03",
+    number: "04",
     title: "UrbanFarme",
     description: "Sistema de gestão agrícola cross-platform com dados em tempo real e integração completa de banco de dados.",
     tags: ["React", "Node.js", "PostgreSQL", "REST API"],
@@ -37,7 +45,7 @@ const projects: Project[] = [
     link: "https://fazenda-urbana.onrender.com/",
   },
   {
-    number: "04",
+    number: "05",
     title: "Image Gallery",
     description: "Galeria dinâmica com API externa, layouts responsivos e scroll infinito.",
     tags: ["React", "API Integration", "Responsive"],
@@ -45,20 +53,12 @@ const projects: Project[] = [
     link: "https://gallery-sigma-one-89.vercel.app/",
   },
   {
-    number: "05",
+    number: "06",
     title: "Terras Mil Dashboard",
     description: "Dashboard de operações para agricultura urbana com insights em tempo real.",
     tags: ["React", "Dashboard", "Data Viz"],
     image: "/assets/terrasmil.jpeg",
     link: "https://terras-mil.netlify.app/",
-  },
-  {
-    number: "06",
-    title: "Foods Platform",
-    description: "Plataforma de receitas curada com UI intuitiva para descobrir e organizar refeições.",
-    tags: ["React", "JavaScript", "CSS", "API"],
-    image: "/assets/foods.jpeg",
-    link: "https://foodsprojectdemo.netlify.app/",
   },
 ];
 
