@@ -14,19 +14,20 @@ interface Project {
 const projects: Project[] = [
   {
     number: "01",
+    title: "Atlas Finance AI",
+    description: "Plataforma de gestão financeira, com integração à OpenFinance e IA.",
+    tags: ["Next", "Nest", "Finance", "Fullstack"],
+    image: "/assets/atlas.png",
+    link: "https://atlas-finance-web.onrender.app/", 
+    
+  },
+  {
+number: "02",
     title: "EcoEduca Platform",
     description: "Plataforma de educação ambiental desenvolvida para concientização de assuntos ecológicos.",
     tags: ["Artificial Inteligence", "Platform", "UX"],
     image: "/assets/ecoeduca.jpeg",
     link: "https://ecoeduca.onrender.com/",
-  },
-  {
-    number: "02",
-    title: "Shop.co E-commerce",
-    description: "Plataforma de gestão financeira, com integração à OpenFinance e IA.",
-    tags: ["Next", "Nest", "Finance", "Fullstack"],
-    image: "/assets/atlas.png",
-    link: "https://atlas-finance-web.onrender.app/",
   },
   {
     number: "03",
