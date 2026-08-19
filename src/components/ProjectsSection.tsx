@@ -20,7 +20,7 @@ const projects: Project[] = [
     tags: ["Next", "Nest", "Finance", "Fullstack"],
     image:
       "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://atlas-finance-web.onrender.app/",
-    link: "https://atlas-finance-web.onrender.app/",
+    link: "https://atlas-finance-web.onrender.com/",
   },
   {
     number: "02",
