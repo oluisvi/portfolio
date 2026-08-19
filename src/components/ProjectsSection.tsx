@@ -19,7 +19,7 @@ const projects: Project[] = [
       "Plataforma de gestão financeira, com integração à OpenFinance e IA.",
     tags: ["Next", "Nest", "Finance", "Fullstack"],
     image:
-      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://atlas-finance-web.onrender.app/",
+      "https://image.thum.io/get/width/1300/crop/600/maxAge/20/https://atlas-finance-web.onrender.app/",
     link: "https://atlas-finance-web.onrender.com/",
   },
   {
