@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 interface Project {
@@ -68,7 +67,13 @@ const projects: Project[] = [
   },
 ];
 
-const ProjectItem = ({ project, index }: { project: Project; index: number }) => {
+const ProjectItem = ({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const isEven = index % 2 === 0;
@@ -86,39 +91,49 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
         transition={{ duration: 0.8 }}
         className="block relative group mb-32 md:mb-48"
       >
-        <div className="relative overflow-hidden">
-          <motion.img
-            src={project.image}
-            alt={project.title}
-            loading="eager"
-            decoding="async"
-            className="block w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
-          />
-
-        <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
-      </div>
-        <div className="mt-6 md:mt-8 flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-          <div>
-            <span className="text-accent font-heading text-sm tracking-widest">{project.number}</span>
-            <h3 className="font-heading text-3xl md:text-5xl font-bold text-foreground mt-2">
-              {project.title}
-            </h3>
+        <div className="mx-auto max-w-[1100px]">
+          <div className="relative flex justify-center overflow-hidden border border-border/50 bg-card/20">
+            <motion.img
+              src={project.image}
+              alt={project.title}
+              loading="eager"
+              decoding="async"
+              className="block w-auto max-w-full h-auto object-contain object-center"
+            />
           </div>
-          <p className="text-muted-foreground font-body text-sm md:text-base max-w-sm leading-relaxed md:text-right">
-            {project.description}
-          </p>
-        </div>
 
-        <div className="flex flex-wrap gap-3 mt-4">
-          {project.tags.map((tag) => (
-            <span key={tag} className="text-xs font-body text-muted-foreground uppercase tracking-widest border border-border px-3 py-1">
-              {tag}
-            </span>
-          ))}
+          <div className="mt-6 md:mt-8 flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div>
+              <span className="text-accent font-heading text-sm tracking-widest">
+                {project.number}
+              </span>
+              <h3 className="font-heading text-3xl md:text-5xl font-bold text-foreground mt-2">
+                {project.title}
+              </h3>
+            </div>
+
+            <p className="text-muted-foreground font-body text-sm md:text-base max-w-sm leading-relaxed md:text-right">
+              {project.description}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-4">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-body text-muted-foreground uppercase tracking-widest border border-border px-3 py-1"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </motion.a>
     );
   }
+
+  const alignmentClass = isEven ? "mr-auto" : "ml-auto";
+  const textAlignmentClass = isEven ? "" : "md:text-right";
 
   return (
     <motion.a
@@ -129,36 +144,49 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: 0.1 }}
-      className={`block relative group mb-24 md:mb-36 ${
-        isEven ? "md:ml-0 md:mr-[15%]" : "md:ml-[15%] md:mr-0"
-      }`}
+      className="block relative group mb-24 md:mb-36"
     >
-      <div className="relative overflow-hidden">
+      <div
+        className={`relative max-w-[920px] ${alignmentClass} flex justify-center overflow-hidden border border-border/50 bg-card/20`}
+      >
         <motion.img
           src={project.image}
           alt={project.title}
           loading="lazy"
           decoding="async"
-          className="block w-full h-auto object-contain object-center transition-transform duration-700 group-hover:scale-[1.03]"
+          className="block w-auto max-w-full h-auto object-contain object-center"
         />
-        <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-500" />
 
-        {/* Overlapping number */}
-        <span className="absolute -bottom-6 md:-bottom-10 right-4 md:right-8 font-heading text-[5rem] md:text-[8rem] font-bold text-foreground/10 leading-none select-none">
+        <span className="absolute -bottom-6 md:-bottom-10 right-4 md:right-8 font-heading text-[5rem] md:text-[8rem] font-bold text-foreground/10 leading-none select-none pointer-events-none">
           {project.number}
         </span>
       </div>
 
-      <div className={`mt-8 ${isEven ? "" : "md:text-right"}`}>
+      <div
+        className={`mt-8 max-w-[920px] ${alignmentClass} ${textAlignmentClass}`}
+      >
         <h3 className="font-heading text-2xl md:text-4xl font-bold text-foreground group-hover:text-accent transition-colors duration-300">
           {project.title}
         </h3>
-        <p className={`text-muted-foreground font-body text-sm md:text-base max-w-md leading-relaxed mt-3 ${isEven ? "" : "md:ml-auto"}`}>
+
+        <p
+          className={`text-muted-foreground font-body text-sm md:text-base max-w-md leading-relaxed mt-3 ${
+            isEven ? "" : "md:ml-auto"
+          }`}
+        >
           {project.description}
         </p>
-        <div className={`flex flex-wrap gap-3 mt-4 ${isEven ? "" : "md:justify-end"}`}>
+
+        <div
+          className={`flex flex-wrap gap-3 mt-4 ${
+            isEven ? "" : "md:justify-end"
+          }`}
+        >
           {project.tags.map((tag) => (
-            <span key={tag} className="text-xs font-body text-muted-foreground uppercase tracking-widest border border-border px-3 py-1">
+            <span
+              key={tag}
+              className="text-xs font-body text-muted-foreground uppercase tracking-widest border border-border px-3 py-1"
+            >
               {tag}
             </span>
           ))}
@@ -170,10 +198,16 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
 
 const ProjectsSection = () => {
   const titleRef = useRef(null);
-  const titleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const titleInView = useInView(titleRef, {
+    once: true,
+    margin: "-100px",
+  });
 
   return (
-    <section id="projects" className="px-6 md:px-12 py-24 md:py-32">
+    <section
+      id="projects"
+      className="px-6 md:px-12 py-24 md:py-32 max-w-[1500px] mx-auto"
+    >
       <motion.div
         ref={titleRef}
         initial={{ opacity: 0, x: -60 }}
@@ -181,7 +215,10 @@ const ProjectsSection = () => {
         transition={{ duration: 0.7 }}
         className="mb-24 md:mb-32"
       >
-        <span className="text-accent font-body text-xs uppercase tracking-[0.3em]">Trabalho selecionado</span>
+        <span className="text-accent font-body text-xs uppercase tracking-[0.3em]">
+          Trabalho selecionado
+        </span>
+
         <h2 className="font-heading text-5xl md:text-8xl font-bold text-foreground mt-4 tracking-tighter">
           Projetos
         </h2>
