@@ -18,8 +18,7 @@ const projects: Project[] = [
     description:
       "Plataforma de gestão financeira, com integração à OpenFinance e IA.",
     tags: ["Next", "Nest", "Finance", "Fullstack"],
-    image:
-      "https://image.thum.io/get/width/1300/crop/600/maxAge/20/https://atlas-finance-web.onrender.app/",
+    image: "/assets/atlas.png",
     link: "https://atlas-finance-web.onrender.com/",
   },
   {
@@ -28,8 +27,7 @@ const projects: Project[] = [
     description:
       "Plataforma de educação ambiental desenvolvida para conscientização de assuntos ecológicos.",
     tags: ["Artificial Intelligence", "Platform", "UX"],
-    image:
-      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://ecoeduca.onrender.com/",
+    image: "/assets/ecoeduca.jpeg",
     link: "https://ecoeduca.onrender.com/",
   },
   {
@@ -38,8 +36,7 @@ const projects: Project[] = [
     description:
       "Plataforma e-commerce completa com navegação de produtos, filtros e checkout fluido.",
     tags: ["React", "TypeScript", "Tailwind CSS", "API"],
-    image:
-      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://shop-co-store.vercel.app/",
+    image: "/assets/shopco_rebranding.png",
     link: "https://shop-co-store.vercel.app/",
   },
   {
@@ -48,8 +45,7 @@ const projects: Project[] = [
     description:
       "Solução web para cafeteria comandada por família, trazendo opções do mundo real para a internet.",
     tags: ["React", "API Integration", "Responsive"],
-    image:
-      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://brucan-bakery.vercel.app/",
+    image: "/assets/brucan_bakery.png",
     link: "https://brucan-bakery.vercel.app/",
   },
   {
@@ -58,8 +54,7 @@ const projects: Project[] = [
     description:
       "Sistema de gestão agrícola cross-platform com dados em tempo real e integração completa de banco de dados.",
     tags: ["React", "Node.js", "PostgreSQL", "REST API"],
-    image:
-      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://fazenda-urbana.onrender.com/",
+    image: "/assets/urbanfarme.jpeg",
     link: "https://fazenda-urbana.onrender.com/",
   },
   {
@@ -68,8 +63,7 @@ const projects: Project[] = [
     description:
       "Dashboard de operações para agricultura urbana com insights em tempo real.",
     tags: ["React", "Dashboard", "Data Viz"],
-    image:
-      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://terras-mil.netlify.app/",
+    image: "/assets/terrasmil.jpeg",
     link: "https://terras-mil.netlify.app/",
   },
 ];
