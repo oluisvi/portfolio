@@ -50,7 +50,7 @@ number: "02",
     title: "Brucan Bakery",
     description: "Galeria dinâmica com API externa, layouts responsivos e scroll infinito.",
     tags: ["React", "API Integration", "Responsive"],
-    image: "https://image.thum.io/get/width/1200/crop/760/png/maxAge/24/wait/4/https://brucan-bakery.vercel.app/)](https://brucan-bakery.vercel.app/" ,
+    image: "https://image.thum.io/get/https://brucan-bakery.vercel.app/" ,
     link: "https://brucan-bakery.vercel.app/",
   },
   {
