@@ -98,11 +98,11 @@ const ProjectItem = ({ project, index }: { project: Project; index: number }) =>
             alt={project.title}
             loading="eager"
             decoding="async"
-            className="block w-full h-auto object-contain object-center transition-transform duration-700 group-hover:scale-105"
+            className="block w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
           />
-          <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
-        </div>
 
+        <div className="absolute inset-0 bg-background/20 group-hover:bg-background/5 transition-colors duration-500" />
+      </div>
         <div className="mt-6 md:mt-8 flex flex-col md:flex-row md:items-start md:justify-between gap-4">
           <div>
             <span className="text-accent font-heading text-sm tracking-widest">{project.number}</span>
