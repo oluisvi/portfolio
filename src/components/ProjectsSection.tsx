@@ -15,50 +15,61 @@ const projects: Project[] = [
   {
     number: "01",
     title: "Atlas Finance AI",
-    description: "Plataforma de gestão financeira, com integração à OpenFinance e IA.",
+    description:
+      "Plataforma de gestão financeira, com integração à OpenFinance e IA.",
     tags: ["Next", "Nest", "Finance", "Fullstack"],
-    image: "/assets/atlas.png",
-    link: "https://atlas-finance-web.onrender.app/", 
-    
+    image:
+      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://atlas-finance-web.onrender.app/",
+    link: "https://atlas-finance-web.onrender.app/",
   },
   {
-number: "02",
+    number: "02",
     title: "EcoEduca Platform",
-    description: "Plataforma de educação ambiental desenvolvida para conscientização de assuntos ecológicos.",
+    description:
+      "Plataforma de educação ambiental desenvolvida para conscientização de assuntos ecológicos.",
     tags: ["Artificial Intelligence", "Platform", "UX"],
-    image: "/assets/ecoeduca.jpeg",
+    image:
+      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://ecoeduca.onrender.com/",
     link: "https://ecoeduca.onrender.com/",
   },
   {
     number: "03",
     title: "Shop.co E-commerce",
-    description: "Plataforma e-commerce completa com navegação de produtos, filtros e checkout fluido.",
+    description:
+      "Plataforma e-commerce completa com navegação de produtos, filtros e checkout fluido.",
     tags: ["React", "TypeScript", "Tailwind CSS", "API"],
-    image: "/assets/shopco.jpeg",
+    image:
+      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://shop-co-store.vercel.app/",
     link: "https://shop-co-store.vercel.app/",
   },
   {
     number: "04",
-    title: "UrbanFarme",
-    description: "Sistema de gestão agrícola cross-platform com dados em tempo real e integração completa de banco de dados.",
-    tags: ["React", "Node.js", "PostgreSQL", "REST API"],
-    image: "/assets/urbanfarme.jpeg",
-    link: "https://fazenda-urbana.onrender.com/",
+    title: "Brucan Bakery",
+    description:
+      "Solução web para cafeteria comandada por família, trazendo opções do mundo real para a internet.",
+    tags: ["React", "API Integration", "Responsive"],
+    image:
+      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://brucan-bakery.vercel.app/",
+    link: "https://brucan-bakery.vercel.app/",
   },
   {
     number: "05",
-    title: "Brucan Bakery",
-    description: "Galeria dinâmica com API externa, layouts responsivos e scroll infinito.",
-    tags: ["React", "API Integration", "Responsive"],
-    image: "https://image.thum.io/get/width/1200/crop/760/wait/4/https://brucan-bakery.vercel.app/",
-    link: "https://brucan-bakery.vercel.app/",
+    title: "UrbanFarme",
+    description:
+      "Sistema de gestão agrícola cross-platform com dados em tempo real e integração completa de banco de dados.",
+    tags: ["React", "Node.js", "PostgreSQL", "REST API"],
+    image:
+      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://fazenda-urbana.onrender.com/",
+    link: "https://fazenda-urbana.onrender.com/",
   },
   {
     number: "06",
     title: "Terras Mil Dashboard",
-    description: "Dashboard de operações para agricultura urbana com insights em tempo real.",
+    description:
+      "Dashboard de operações para agricultura urbana com insights em tempo real.",
     tags: ["React", "Dashboard", "Data Viz"],
-    image: "/assets/terrasmil.jpeg",
+    image:
+      "https://image.thum.io/get/width/1200/crop/760/maxAge/24/https://terras-mil.netlify.app/",
     link: "https://terras-mil.netlify.app/",
   },
 ];
