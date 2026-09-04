@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="g" cx="80%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#ff7a1a" stop-opacity=".22"/>
+      <stop offset=".65" stop-color="#ff7a1a" stop-opacity=".03"/>
+      <stop offset="1" stop-color="#09090b" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#262a31" stroke-width="1" opacity=".6"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#09090b"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect x="72" y="72" width="36" height="4" fill="#ff7a1a"/>
+  <text x="72" y="210" fill="#f5f1e8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="82">LUIS HENRIQUE</text>
+  <text x="72" y="300" fill="#f5f1e8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="82">SOFTWARE DEVELOPER</text>
+  <text x="76" y="370" fill="#a69f95" font-family="monospace" font-size="27" letter-spacing="4">FRONT-END / FULL STACK / AI-ASSISTED</text>
+  <text x="76" y="500" fill="#7e7a73" font-family="Arial, Helvetica, sans-serif" font-size="24">Building digital products with craft, systems thinking and real engineering depth.</text>
+  <circle cx="1090" cy="516" r="8" fill="#ff7a1a"/>
+</svg>

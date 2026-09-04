@@ -1,80 +1,95 @@
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+
+const links = [
+  { label: "Work", href: "#work" },
+  { label: "Process", href: "#process" },
+  { label: "Stack", href: "#stack" },
+  { label: "About", href: "#about" },
+];
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const links = [
-    { label: "Projetos", href: "#projects" },
-    { label: "Sobre", href: "#about" },
-    { label: "Contato", href: "#contact" },
-  ];
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    const onScroll = () => setScrolled(window.scrollY > 32);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [menuOpen]);
+  }, [open]);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 md:mix-blend-difference">
-      <div className="relative z-50 flex items-center justify-between px-6 md:px-12 py-6">
-        <a href="#" className="font-heading text-foreground text-lg font-medium tracking-tight">
-          LH<span className="text-accent">.</span>
+    <header className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}>
+      <div className="site-header__inner shell">
+        <a href="#top" className="brand" aria-label="Luis Henrique — home">
+          <span className="brand__name">OLUISVI</span>
+          <span className="brand__dot" aria-hidden="true" />
+          <span className="brand__role">Software Developer</span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="desktop-nav" aria-label="Primary navigation">
           {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-foreground text-sm font-body tracking-wide uppercase hover:text-accent focus-visible:text-accent focus-visible:outline-none transition-colors duration-300"
-            >
+            <a key={link.href} href={link.href}>
               {link.label}
             </a>
           ))}
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-controls="mobile-navigation"
-          aria-expanded={menuOpen}
-          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
-          className="md:hidden text-foreground font-heading text-sm uppercase focus-visible:text-accent focus-visible:outline-none"
-        >
-          {menuOpen ? "Fechar" : "Menu"}
-        </button>
+        <div className="site-header__actions">
+          <span className="availability"><i /> Available for opportunities</span>
+          <a className="button button--compact" href="#contact">
+            Let&apos;s talk <ArrowUpRight size={15} aria-hidden="true" />
+          </a>
+          <button
+            className="menu-button"
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
-        {menuOpen && (
+        {open ? (
           <motion.div
-            id="mobile-navigation"
-            role="navigation"
-            aria-label="Navegação mobile"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden fixed inset-0 bg-background z-40 flex flex-col items-start justify-center px-8 gap-8"
+            className="mobile-menu"
+            initial={reduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            {links.map((link, i) => (
-              <motion.a
-                key={link.label}
-                href={link.href}
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1 }}
-                onClick={() => setMenuOpen(false)}
-                className="font-heading text-5xl font-bold text-foreground hover:text-accent focus-visible:text-accent focus-visible:outline-none transition-colors"
-              >
-                {link.label}
-              </motion.a>
-            ))}
+            <nav aria-label="Mobile navigation">
+              {links.map((link, index) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  initial={reduceMotion ? false : { opacity: 0, x: -24 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: reduceMotion ? 0 : index * 0.06 }}
+                >
+                  <span>0{index + 1}</span>
+                  {link.label}
+                </motion.a>
+              ))}
+              <a className="mobile-menu__contact" href="#contact" onClick={() => setOpen(false)}>
+                Start a conversation <ArrowUpRight size={20} />
+              </a>
+            </nav>
           </motion.div>
-        )}
+        ) : null}
       </AnimatePresence>
     </header>
   );

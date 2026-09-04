@@ -1,81 +1,116 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { ArrowDown, ArrowUpRight, Github } from "lucide-react";
+
+const HeroSignal = () => {
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const drift = useTransform(scrollYProgress, [0, 0.35], [0, 90]);
+
+  return (
+    <motion.div className="hero-signal" style={reduceMotion ? undefined : { y: drift }} aria-hidden="true">
+      <div className="hero-signal__glow" />
+      <div className="hero-signal__rail hero-signal__rail--one" />
+      <div className="hero-signal__rail hero-signal__rail--two" />
+      <div className="hero-signal__core">
+        <span>PRODUCT</span>
+        <span>INTERFACE</span>
+        <span>SYSTEMS</span>
+        <span>AUTOMATION</span>
+      </div>
+      <motion.div
+        className="hero-signal__orbit"
+        animate={reduceMotion ? undefined : { rotate: 360 }}
+        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+      >
+        <i />
+      </motion.div>
+      <div className="hero-signal__caption">BUILD / TEST / SHIP / IMPROVE</div>
+    </motion.div>
+  );
+};
 
 const HeroSection = () => {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <section className="min-h-[100svh] md:min-h-screen flex flex-col justify-end pb-16 md:pb-24 px-6 md:px-12 relative overflow-hidden">
-      {/* Background accent line */}
-      <div className="absolute top-0 right-[20%] w-px h-full bg-border opacity-30" />
-      <div className="absolute top-0 right-[60%] w-px h-full bg-border opacity-15" />
+    <section className="hero section-grid" id="top">
+      <div className="hero__grid-lines" aria-hidden="true" />
+      <div className="shell hero__inner">
+        <div className="hero__copy">
+          <motion.div
+            className="eyebrow-line"
+            initial={reduceMotion ? false : { opacity: 0, x: -18 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span /> Building what&apos;s next
+          </motion.div>
 
-      <div className="relative z-10 max-w-[1400px]">
-        <motion.p
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-muted-foreground font-body text-sm md:text-base uppercase tracking-[0.3em] mb-8"
-        >
-          Fullstack Developer — Brasil
-        </motion.p>
+          <motion.h1
+            initial={reduceMotion ? false : { opacity: 0, y: 36 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, delay: reduceMotion ? 0 : 0.08, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span>SOFTWARE</span>
+            <span>DEVELOPER</span>
+          </motion.h1>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-heading font-bold text-foreground leading-[0.85] tracking-tighter"
-        >
-          <span className="block text-[clamp(3rem,12vw,11rem)]">
-            Eu construo
-          </span>
-          <span className="block text-[clamp(3rem,12vw,11rem)] ml-[5vw] md:ml-[10vw]">
-            produtos
-          </span>
-          <span className="block text-[clamp(2rem,7vw,6rem)] text-stroke mt-2 ml-[2vw]">
-            que resolvem problemas reais
-          </span>
-        </motion.h1>
+          <motion.p
+            className="hero__discipline"
+            initial={reduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: reduceMotion ? 0 : 0.32 }}
+          >
+            FRONT-END <b>/</b> FULL STACK <b>/</b> AI-ASSISTED
+          </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 md:mt-16 flex flex-col md:flex-row md:items-end justify-between gap-8"
-        >
-          <p className="font-body text-muted-foreground text-base md:text-lg max-w-md leading-relaxed">
-            React, Node.js e aplicações com IA.
-            <br />
-            Transformando requisitos complexos em software pronto para produção.
-          </p>
+          <motion.p
+            className="hero__lede"
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: reduceMotion ? 0 : 0.42 }}
+          >
+            I turn ideas into real digital products through clean interfaces, deliberate systems and production-minded engineering.
+          </motion.p>
 
-          <div className="flex gap-12 font-heading">
+          <motion.div
+            className="hero__actions"
+            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: reduceMotion ? 0 : 0.52 }}
+          >
+            <a className="button button--primary" href="#work">
+              View selected work <ArrowUpRight size={17} aria-hidden="true" />
+            </a>
+            <a className="button button--ghost" href="https://github.com/oluisvi" target="_blank" rel="noreferrer">
+              <Github size={17} aria-hidden="true" /> GitHub
+            </a>
+          </motion.div>
+
+          <motion.div
+            className="hero__meta"
+            initial={reduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: reduceMotion ? 0 : 0.64 }}
+          >
             <div>
-              <span className="text-3xl md:text-5xl font-bold text-foreground">6+</span>
-              <p className="text-xs text-muted-foreground uppercase tracking-widest mt-1">Projetos</p>
+              <span>Based in Brazil</span>
+              <strong>Open to remote opportunities worldwide</strong>
             </div>
             <div>
-              <span className="text-3xl md:text-5xl font-bold text-foreground">1+</span>
-              <p className="text-xs text-muted-foreground uppercase tracking-widest mt-1">Ano exp.</p>
+              <span>Building professionally since</span>
+              <strong>2024 → now</strong>
             </div>
-            <div>
-              <span className="text-3xl md:text-5xl font-bold text-foreground">5+</span>
-              <p className="text-xs text-muted-foreground uppercase tracking-widest mt-1">Tecnologias</p>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
+
+        <HeroSignal />
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 right-6 md:right-12"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="w-px h-16 bg-muted-foreground"
-        />
-      </motion.div>
+      <a className="scroll-cue" href="#work" aria-label="Scroll to selected work">
+        <span>Scroll</span>
+        <ArrowDown size={16} />
+      </a>
     </section>
   );
 };
